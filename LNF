@@ -1,0 +1,46 @@
+// create an array variable to hold your NFT's
+let nfts = [];
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT(name, description, rarity) {
+    // Create an object to hold NFT metadata
+    let nft = {
+        name: name,
+        description: description,
+        rarity: rarity,
+    };
+    // Store the NFT object in the array
+    nfts.push(nft);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs() {
+    // Iterate over each NFT and print its metadata
+    nfts.forEach(nft => {
+        console.log("Name: " + nft.name);
+        console.log("Description: " + nft.description);
+        console.log("Rarity: " + nft.rarity);
+        console.log("-----------");
+    });
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    // Return the length of the array, which represents the total number of NFTs minted
+    return nfts.length;
+}
+
+// Call your functions below this line
+
+// Mint some NFTs
+mintNFT("Galactic Explorer", "This NFT depicts a futuristic spacecraft traversing through the vast expanse of space. With sleek, aerodynamic design and glowing propulsion systems, it embodies the spirit of exploration and adventure. The vibrant colors and intricate details capture the imagination, inviting viewers to embark on a journey to the stars.", "Legendary");
+mintNFT("Enchanted Forest", "Immerse yourself in the tranquility of nature with this enchanting NFT. A lush forest scene comes to life with vibrant foliage, towering trees, and playful woodland creatures. Sunlight filters through the canopy, casting dappled shadows on the forest floor, while a gentle breeze rustles the leaves. Whether you seek solace or inspiration, this NFT transports you to a world of natural wonder and beauty.", "Rare");
+
+// List all minted NFTs
+listNFTs();
+
+// Print total number of minted NFTs
+console.log("Total number of NFTs: " + getTotalSupply());
